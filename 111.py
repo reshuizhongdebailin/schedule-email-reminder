@@ -12,14 +12,35 @@ import os
 from datetime import datetime
 
 # 配置信息
-USERNAME = 'U202515074'  # 你的学号
-PASSWORD = 'Hsl240419@'      # 你的密码
+USERNAME = os.getenv('HUST_USERNAME', '').strip()  # 你的学号
+PASSWORD = os.getenv('HUST_PASSWORD', '').strip()  # 你的密码
 LOGIN_URL = 'https://hubs.hust.edu.cn/auth/login'  # 登录页URL
 SCHEDULE_URL = 'https://hubs.hust.edu.cn/basicInformation/scheduleInformation/index'  # 课表页URL
 
 # 邮件配置
-QQ_EMAIL = '534154265@qq.com'  # 请替换为你的QQ邮箱
-QQ_AUTH_CODE = 'kehhnwrtqhhobicc'      # 请替换为你的QQ邮箱授权码
+QQ_EMAIL = os.getenv('QQ_EMAIL', '').strip()  # 请通过环境变量配置
+QQ_AUTH_CODE = os.getenv('QQ_AUTH_CODE', '').strip()  # 请通过环境变量配置
+
+
+def validate_required_config():
+    missing = []
+    if not USERNAME:
+        missing.append('HUST_USERNAME')
+    if not PASSWORD:
+        missing.append('HUST_PASSWORD')
+    if not QQ_EMAIL:
+        missing.append('QQ_EMAIL')
+    if not QQ_AUTH_CODE:
+        missing.append('QQ_AUTH_CODE')
+    if missing:
+        print('缺少环境变量：' + ', '.join(missing))
+        print('请先配置后再运行脚本。')
+        return False
+    return True
+
+
+if not validate_required_config():
+    exit()
 
 # 启动浏览器
 try:

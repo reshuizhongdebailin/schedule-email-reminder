@@ -20,12 +20,17 @@ build/
 .DS_Store
 
 # Project specific
-cookies_auto.json           # 包含敏感Cookie信息，不上传
-schedule_log.txt           # 日志文件
-captcha.png                # 验证码截图
-page_source.html           # 调试文件
-page_screenshot.png        # 调试文件
-.env                       # 本地环境变量
+# 包含敏感 Cookie 信息
+cookies_auto.json
+# 日志文件
+schedule_log.txt
+# 验证码截图
+captcha.png
+# 调试文件
+page_source.html
+page_screenshot.png
+# 本地环境变量
+.env
 
 # 编辑器
 .sublime-project

@@ -13,8 +13,23 @@ from datetime import datetime
 API_URL = 'https://hubs.hust.edu.cn/schedule/getStudentScheduleByDate'
 
 # 邮件配置
-QQ_EMAIL = '534154265@qq.com'
-QQ_AUTH_CODE = 'kehhnwrtqhhobicc'
+QQ_EMAIL = os.getenv('QQ_EMAIL', '').strip()
+QQ_AUTH_CODE = os.getenv('QQ_AUTH_CODE', '').strip()
+
+
+def validate_required_config():
+    """检查必要配置，避免空配置导致运行失败。"""
+    missing = []
+    if not QQ_EMAIL:
+        missing.append('QQ_EMAIL')
+    if not QQ_AUTH_CODE:
+        missing.append('QQ_AUTH_CODE')
+
+    if missing:
+        print('✗ 缺少环境变量配置：' + ', '.join(missing))
+        print('请在系统环境变量或 .env 中配置后再运行。')
+        return False
+    return True
 
 def load_cookies():
     """从文件加载Cookies"""
@@ -132,6 +147,9 @@ def main():
     print('='*50)
     print('课表提醒系统 - 直接API调用模式')
     print('='*50)
+
+    if not validate_required_config():
+        return
     
     # 加载cookies
     cookies = load_cookies()
