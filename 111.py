@@ -12,14 +12,14 @@ import os
 from datetime import datetime
 
 # 配置信息
-USERNAME = '输入你的学号'  # 你的学号
-PASSWORD = '输入你的密码'      # 你的密码
+USERNAME = 'U202515074'  # 你的学号
+PASSWORD = 'Hsl240419@'      # 你的密码
 LOGIN_URL = 'https://hubs.hust.edu.cn/auth/login'  # 登录页URL
 SCHEDULE_URL = 'https://hubs.hust.edu.cn/basicInformation/scheduleInformation/index'  # 课表页URL
-#这里是华科的登录页和课表页URL，确保这两个URL是正确的，否则需要根据实际情况修改
+
 # 邮件配置
-QQ_EMAIL = '输入你的QQ邮箱'  # 请替换为你的QQ邮箱
-QQ_AUTH_CODE = '输入你的QQ邮箱授权码'      # 请替换为你的QQ邮箱授权码
+QQ_EMAIL = '534154265@qq.com'  # 请替换为你的QQ邮箱
+QQ_AUTH_CODE = 'kehhnwrtqhhobicc'      # 请替换为你的QQ邮箱授权码
 
 # 启动浏览器
 try:

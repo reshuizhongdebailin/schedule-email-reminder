@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Project specific
+cookies_auto.json           # 包含敏感Cookie信息，不上传
+schedule_log.txt           # 日志文件
+captcha.png                # 验证码截图
+page_source.html           # 调试文件
+page_screenshot.png        # 调试文件
+.env                       # 本地环境变量
+
+# 编辑器
+.sublime-project
+.sublime-workspace
+chromedriver.exe

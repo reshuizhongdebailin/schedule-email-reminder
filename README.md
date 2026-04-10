@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+# schedule-email-reminder
+Automatic schedule reminder email system
+=======
 # 课表邮件提醒系统
 
 自动爬取学校课表，每天发送课表提醒邮件。
@@ -67,7 +71,6 @@ python fetch_schedule_api.py
 
 ```python
 API_URL = 'https://hubs.hust.edu.cn/schedule/getStudentScheduleByDate'
-#这里是华科的
 QQ_EMAIL = '你的QQ邮箱@qq.com'
 QQ_AUTH_CODE = '你的邮箱授权码'
 ```
@@ -124,4 +127,4 @@ Created: 2026-04-10
 ## License
 
 MIT License
-fb36926 (Initial commit: Schedule email reminder system)
+>>>>>>> fb36926 (Initial commit: Schedule email reminder system)

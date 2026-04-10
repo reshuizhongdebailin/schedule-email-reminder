@@ -11,11 +11,10 @@ from datetime import datetime
 
 # 配置信息
 API_URL = 'https://hubs.hust.edu.cn/schedule/getStudentScheduleByDate'
-#这里是华科的课表API地址，直接调用这个接口就能获取课表数据
 
 # 邮件配置
-QQ_EMAIL = '自己邮箱@qq.com'
-QQ_AUTH_CODE = '自己输入'
+QQ_EMAIL = '534154265@qq.com'
+QQ_AUTH_CODE = 'kehhnwrtqhhobicc'
 
 def load_cookies():
     """从文件加载Cookies"""
